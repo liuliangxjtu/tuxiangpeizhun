@@ -1,0 +1,12 @@
+P1 = imread('image A.jpg'); 
+P2= imread('image B.jpg'); 
+figure(1); 
+subplot(1,2,1),imshow(P1); 
+subplot(1,2,2),imshow(P2); 
+%cpselect(P1,P2); 
+%cp=load('cpstruct.mat');
+tform=cp2tform(movingPoints  ,fixedPoints  ,'affine'); 
+P3=imtransform(P1,tform);
+figure (2);
+subplot(1,2,1),imshow(P3); 
+subplot(1,2,2),imshow(P2); 
